@@ -1,0 +1,7 @@
+.DS_*
+.DS_Store
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+node_modules/

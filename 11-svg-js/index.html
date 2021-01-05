@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="create">Criar circulo</button>
+    <svg class="desenho" width="500" height="500" viewBox="0 0 500 500"></svg>
+
+    <script>
+      var desenho = document.querySelector(".desenho");
+
+      var svgNS = "http://www.w3.org/2000/svg";
+
+      function createCircle() {
+        var randomX = Math.floor(Math.random() * 500);
+        var randomY = Math.floor(Math.random() * 500);
+
+        var myCircle = document.createElementNS(svgNS, "circle");
+
+        myCircle.setAttributeNS(null, "r", 10);
+        myCircle.setAttributeNS(null, "cx", randomX);
+        myCircle.setAttributeNS(null, "cy", randomY);
+        myCircle.setAttributeNS(null, "fill", "red");
+
+        desenho.appendChild(myCircle);
+      }
+
+      var btn = document.querySelector("#create");
+
+      btn.addEventListener("click", createCircle);
+    </script>
+  </body>
+</html>

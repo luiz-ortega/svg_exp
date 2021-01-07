@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background: #000;
+        color: #fff;
+        font-family: "Chango", cursive;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+
+        filter: url("#drunk");
+      }
+
+      .drunk {
+        font-size: 8vw;
+        letter-spacing: 10px;
+        border: 3vw solid #fff;
+        padding: 4vw 5vw;
+        animation: drunk 3s ease-in-out alternate infinite;
+      }
+
+      svg {
+        display: none;
+      }
+
+      @keyframes drunk {
+        0% {
+          transform: rotate(-25deg);
+        }
+
+        100% {
+          transform: rotate(25deg);
+        }
+      }
+    </style>
+
+    <svg>
+      <defs>
+        <filter id="drunk">
+          <feTurbulence baseFrequency="0.01" numOctaves="2" seed="1" />
+          <feDisplacementMap in="SourceGraphic" scale="30" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="container">
+      <h1 class="drunk">
+        Man, <br />
+        I'm drunk...
+      </h1>
+    </div>
+  </body>
+</html>
